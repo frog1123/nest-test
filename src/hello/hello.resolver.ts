@@ -4,6 +4,6 @@ import { Resolver, Query } from '@nestjs/graphql';
 export class HelloResolver {
   @Query(() => String)
   async hello() {
-    return 'hello from nestjs';
+    return 'hello from nestjs (graphql)';
   }
 }

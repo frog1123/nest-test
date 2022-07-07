@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { AppController } from './app.controller';
+// rest
 import { AppService } from './app.service';
-
+import { AppController } from './app.controller';
+// graphql
 import { HelloModule } from './hello/hello.module';
 import { FrogModule } from './frog/frog.module';
 
@@ -13,10 +14,10 @@ import { FrogModule } from './frog/frog.module';
     FrogModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: 'dist/schema.gql',
-    }),
+      autoSchemaFile: 'dist/schema.gql'
+    })
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}
